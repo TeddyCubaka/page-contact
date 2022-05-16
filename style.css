@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:opsz,wght@9..144,200;9..144,300;9..144,400;9..144,500;9..144,600;9..144,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body{
+    margin: 0px 0px;
+    font-family: "Roboto";
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}           /*pour gérer la taille des images*/
+
+blockquote{
+    margin: 8px;
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    grid-template-rows: 50px 700px;
+    margin-top: 90px;
+}
+
+
+/*les codes pour les titres en générale*/
+
+header{
+    background-color: #534ff0;
+    height: 60px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+}
+.headerOfPage{
+    position: fixed;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0px 1px 6px #313061;
+}
+h1{
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    /* text-align: center; */
+    /* margin-top: 10px; */
+}
+h2{
+    margin-top: 13px;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+
+
+/*maintenant gérons les blocs qui contiendrons nos données*/
+
+
+
+
+.articles{
+    margin: 8px 3px;
+    border: 1px solid #c7c7f1;
+    /* box-shadow: 0.5px 0.5px 2px; */
+}
+
+/* les codes du block contenant le formulaire*/
+
+.classDuFormulaire{
+    height: 600px;
+    background-color: #f6f6f6;
+    color: #534ff0;
+    padding: 30px 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #c7c7f1;
+}
+.classDuFormulaire > input{
+    height: 30px;
+    border: none;
+}
+.classDuFormulaire  > label{
+    font-size: medium;
+    margin-top: 10px;
+}
+.classDuFormulaire > select{
+    /*ceci gère la balise select, son apparence*/
+    height: 40px;
+    border: none;
+    color: #534ff0;
+    -webkit-appearance: none;       /*ces codes suprime le pointeur par defaut de la balise select; sur les autres navigateurs autre que mozilla*/
+    -moz-appearance: none;    /*ces codes suprime le pointeur par defaut de la balise select; sur mizilla firefox*/
+    appearance: none;    /*ces codes suprime le pointeur par defaut de la balise select*/
+    /*ce qui suit gère le nouveau pointeur qui est mis en background*/
+    background: 96% / 15% no-repeat white; 
+    background-image: url("pointeur_bas.png");
+    background-size: 20px;
+}
+/* .classDuFormulaire > select::-ms-expand {
+    display: none; /* supprimer la fléche par défaut en IE 10 et 11 */
+
+.classDuFormulaire > textarea{
+    height: 80px;
+    border: none;
+    resize: none;
+}
+.choixDImage{                   /*ce code modifie le comportement du bloc parent qui contient tout ce qui va avec l'importation et la visualistion de l'image*/
+    border: none;
+    margin: 40px 0px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.choixDImage > input[type=file]{
+    /*ceci permet de cacher l'apparence du bouton créer par defaut de la balise input-file*/
+    left: 40px;
+    opacity: 0;
+    width: 130px;
+    height: 30px;
+    position: absolute;
+    font-size: 50px;
+}
+/* .preview{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+} */
+
+
+/*momentaire*/
+#display-image{
+  width: 100px;
+  height: 100px;
+  /* border: 1px solid black;
+  background-position: center;
+  background-size: cover; */
+}
+
+
+
+
+
+
+
+.boutonDeCréation{
+    /*ces codes codes vont avec le pseudo-bouton qui sera afficher à la place du bouton input-file*/
+    height: 40px;
+    border: none;
+    width: 130px;
+    font-size: medium;
+}
+.lesDeuxBoutons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: none;
+}
+.lesBoutonsDeBas{
+    box-shadow: 0px 1px 3px;
+    color: white;
+    border: none;
+    width: 120px;
+    border-radius: 2px;
+    height: 30px;
+    font-size: large;
+}
+.blueButton{
+    background-color: #534ff0;
+}
+.redButton{
+    background-color: #EF3F46;
+}
+
+
+
+
+
+
+/* Les codes css du deuxième bloc. */
+
+
+
+.bolcRepertoire{
+    border: 1px solid #c7c7f1;
+    /* height: 720px; */
+}
+.contactDiv{
+    border: 1px solid #c7c7f1;
+    display: grid;
+    grid-template-columns: 1.2fr 5fr 0.3fr;
+}
+.contactIcon{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 50px;
+}
+.contactInformation{
+    font-size: small;
+    font-weight: bold;
+    color: #929090;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.btnDelete{
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+.imgDelete{
+    width: 25px;
+    height: 25px;
+    right: 20px;
+}
+#idDuRépertoire{
+   display: none;
+}
