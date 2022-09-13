@@ -11,22 +11,11 @@
        <header class="headerOfPage">
         <h1>Répertoire de contact</h1>
     </header>
-
-
-<!-- après avoir créer le titre principale de la page ou plutôt dans la page je me met à aranger mes codes, de sorte que j'aie deux blocs independants. Ces deux blocs vont me servir de repertoire ou des deux repertoires.-->
-
-
-
     <blockquote>
-
-<!-- avant de créer les deux blocs, je crée d'abord une serction pour avoire la facilité d'aranger mes deux blocs avec les grids -->
-
         <article id="article1" class="articles">
-            <!-- Le bloc, qui contient le formulaire, commence ici -->
             <header>
                 <h2>Formulaire de contact</h2>  
             </header>
-<!-- après ce h2, commence les codes du premier bloc, qui est le formulaire -->
             <form class="classDuFormulaire" enctype="multipart/form-data" method="post">
                 <label for="prénom">Prénom</label><br/>
                 <input type="text" id="prénom" name="prénom" class="inputDuForm" required><br/>
@@ -40,36 +29,16 @@
                     <option id="groupeCollègue" value="Collègue">Collègue</option>
                 </select><br/>
                 <label for="zoneDuBio">Bio du contact</label>
-                <textarea name="zoneDuBio" id="zoneDuBio" cols="30" rows="5" class="inputDuForm" required></textarea><br/>
-
-<!-- la balise d'encadrement "fieldset" qui suit, encadre le bouton qui importe une image sur la page web -->
-
-                <fieldset class="choixDImage">
+                <textarea name="zoneDuBio" id="zoneDuBio" cols="30" rows="5" class="inputDuForm" required></textarea><br/> <fieldset class="choixDImage">
                     <button class="boutonDeCréation">Choisir un fichier</button>
-                    <!-- <input type="file" onchange="handleFiles(files)" id="upload" multiple name="file">
-                    <div><label for="upload"><span id="preview"></span></label></div> -->
                     <input type="file" id="upload" name="icon" accept="image/jpeg, image/png, image/jpg">
-
                     <img src="imgprofile.png" id="display-image" class="preview" alt="previsualiser votre image">
-                </fieldset>
-
-<!-- cette nouvelle balise "fieldset", elle, encadre les deux boutons de création et de réinitialisation -->
-
-                <fieldset class="lesDeuxBoutons">
+                </fieldset><fieldset class="lesDeuxBoutons">
                     <input type="submit" value="Créer" class="blueButton lesBoutonsDeBas" id="blueBtn">
                     <input type="reset" name="reset" id="reset" value="réinit." class="redButton lesBoutonsDeBas">
                 </fieldset>
-
-<!-- et enfin, la fin du formulaire. -->
-
             </form>
         </article>
-
-
-<!-- le deuxième bloc, qui est le block répertoire, commence ici -->
-
-
-
         <article id="répertoire" class="articles bolcRepertoire">
             <header>
                 <h2>liste de contact</h2>
@@ -86,9 +55,7 @@
                 </button>
             </div>
         </article>
-    </blockquote>
-    <!-- <script src="index.js"></script> -->
-    <script src="scripts.js"></script>
+    </blockquote><script src="scripts.js"></script>
   <script src="script.js"></script>
 </body>
 
