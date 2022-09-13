@@ -38,14 +38,21 @@ function seter(){
   contactList.push(contact)
 }
 
-function contactCreator (){
-  contactList.map((contact)=>{
-    
-  })
+function contactsCreator (){
+  const image = document.createElement('img');
+  image.classList.add('contactIcon');
+  contactList[0].image !== "" ? image.src = contactList[0].image : image.src = document.querySelector('#display-image').src;
+  
+  const contact = document.createElement('div');
+  contact.classList.add("contactDiv")
+  contact.appendChild(image);
+  document.querySelector('#répertoire').appendChild(contact);
+
 }
 
 document.querySelector("#blueBtn").addEventListener('click',() =>{
   valuesSelector();
   seter();
-  console.log(contactList)
+  console.log(contactList[0].image)
+  contactsCreator();
 })
