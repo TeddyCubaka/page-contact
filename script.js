@@ -39,13 +39,34 @@ function seter(){
 }
 
 function contactsCreator (){
+  const contactDetails = document.createElement("div");
+  contactDetails.classList.add("contactInformation")
+
   const image = document.createElement('img');
   image.classList.add('contactIcon');
   contactList[0].image !== "" ? image.src = contactList[0].image : image.src = document.querySelector('#display-image').src;
+
+  const names = document.createElement("div");
+  names.classList.add("contactNames");
+  names.innerHTML = `${contactList[0].firstName} ${contactList[0].firstName}`;
+  contactDetails.appendChild(names)
+
+
+  const groupe = document.createElement("div");
+  groupe.classList.add("contactGroupe");
+  groupe.innerHTML = contactList[0].groupe;
+  contactDetails.appendChild(groupe)
+
+  const bio = document.createElement("div");
+  bio.classList.add("contactBio");
+  bio.innerHTML = contactList[0].bio;
+  contactDetails.appendChild(bio);
+
   
   const contact = document.createElement('div');
   contact.classList.add("contactDiv")
   contact.appendChild(image);
+  contact.appendChild(contactDetails)
   document.querySelector('#répertoire').appendChild(contact);
 
 }
