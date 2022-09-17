@@ -1,11 +1,10 @@
 const imgUploaded = document.querySelector('#upload');
 const displayerImg = document.querySelector('#display-image');
+let count = 0;
 
 imgUploaded.addEventListener( 'change' , ()=>{
-  const [picture] = imgUploaded.files
-  if (picture) {
-    displayerImg.src = URL.createObjectURL(picture)
-  }
+  const [picture] = imgUploaded.files;
+  if (picture)displayerImg.src = URL.createObjectURL(picture);
 })
 
 let firstName = ""; 
@@ -27,15 +26,28 @@ let userGroupe = "";
 let userBio = "";
 let userIcon = "";
 let contactList = [];
-
+let contactArray = [];
+let str = "";
 function seter(){
   let contact = {};
+  contact.id = count;
   contact.firstName = firstName;
   contact.secondName = secondName;
   contact.groupe = groupe;
   contact.bio = bio;
   contact.image = displayerImg.src;
   contactList.push(contact)
+}
+
+function callBack (para, element){
+  document.querySelector("#prénom").value = element.firstName;
+  document.querySelector("#nom").value = element.secondName;
+  document.querySelector("#groupe").value = element.groupe;
+  document.querySelector("#zoneDuBio").value = element.bio;
+  document.querySelector('#display-image').src = element.image;
+  document.querySelector("#blueBtn").addEventListener('click', ()=>{
+
+  })
 }
 
 function contactsCreator (element){
@@ -68,13 +80,16 @@ function contactsCreator (element){
     contact.appendChild(image);
     contact.appendChild(contactDetails)
     document.querySelector('#répertoire').appendChild(contact);
+
+    contactArray.push(contact);
+    contact.addEventListener( 'click', ()=>{
+      callBack(contact, element)
+    });
 }
 
 document.querySelector("#blueBtn").addEventListener('click',() =>{
+  count++;
   valuesSelector();
   seter();
   contactsCreator(contactList[contactList.length-1]);
-})
-document.querySelector("#reset").addEventListener('click', ()=>{
-  document.querySelector('#display-image').src = "imgprofile.png";
 })
