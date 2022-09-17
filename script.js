@@ -39,14 +39,35 @@ function seter(){
   contactList.push(contact)
 }
 
+function reset(){
+  document.querySelector("#prénom").value = "";
+  document.querySelector("#nom").value = " ";
+  document.querySelector("#groupe").value = " ";
+  document.querySelector("#zoneDuBio").value = " ";
+  document.querySelector('#display-image').src = "imgprofile.png";
+  // setTimeout(()=>{
+  //   document.querySelector("#blueBtn").value = "créer";
+  // }, 100)
+}
+let modifArray = [];
+
 function callBack (para, element){
+  para = modifArray[modifArray.length-1]
   document.querySelector("#prénom").value = element.firstName;
   document.querySelector("#nom").value = element.secondName;
   document.querySelector("#groupe").value = element.groupe;
   document.querySelector("#zoneDuBio").value = element.bio;
   document.querySelector('#display-image').src = element.image;
+  document.querySelector("#blueBtn").value = "modifier";
   document.querySelector("#blueBtn").addEventListener('click', ()=>{
-
+    para = modifArray[modifArray.length-1]
+    para.children[0].src = document.querySelector('#display-image').src;
+    para.children[1].children[0].innerHTML = `${document.querySelector("#prénom").value} ${document.querySelector("#nom").value}`;
+    para.children[1].children[1].innerHTML = document.querySelector("#groupe").value;
+    para.children[1].children[2].innerHTML = document.querySelector("#zoneDuBio").value;
+    setTimeout(()=>{
+      reset();
+    }, 200)
   })
 }
 
@@ -60,7 +81,7 @@ function contactsCreator (element){
     
     const names = document.createElement("div");
     names.classList.add("contactNames");
-    names.innerHTML = `${element.firstName} ${element.firstName}`;
+    names.innerHTML = `${element.firstName} ${element.secondNames}`;
     contactDetails.appendChild(names)
 
 
@@ -83,13 +104,16 @@ function contactsCreator (element){
 
     contactArray.push(contact);
     contact.addEventListener( 'click', ()=>{
-      callBack(contact, element)
+      modifArray.push(contact);
+      callBack(modifArray[modifArray.length-1] , element)
     });
 }
 
 document.querySelector("#blueBtn").addEventListener('click',() =>{
-  count++;
-  valuesSelector();
-  seter();
-  contactsCreator(contactList[contactList.length-1]);
+  if(document.querySelector("#blueBtn").value == "Créer"){
+    count++;
+    valuesSelector();
+    seter();
+    contactsCreator(contactList[contactList.length-1]);
+  }
 })
